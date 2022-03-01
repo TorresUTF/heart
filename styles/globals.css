@@ -14,3 +14,63 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.grid {
+  display: grid;
+  height: 100vh;
+
+  grid-template-columns: repeat(15,auto);
+  grid-template-rows: repeat(13,auto);
+  --stagger-delay: 50ms;
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+    filter: hue-rotate(90deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: hue-rotate(0deg);
+  }
+}
+
+.red {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  height: 100%;
+  width: 100%;
+  animation: cardEntrance 400ms ease-out;
+  animation-fill-mode: backwards;
+}
+
+.white {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  animation: cardEntrance 200ms ease-out;
+  animation-fill-mode: backwards;
+}
+
+.black {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  animation: cardEntrance 500ms ease-out;
+  animation-fill-mode: backwards;
+}
+
+
